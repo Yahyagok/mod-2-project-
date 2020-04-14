@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 require 'json'
 #-------------------------------------------Movie1 ---------------------------------------------------------------------------------------------------------------------
 @url = "http://www.omdbapi.com/?t=Top+Gun+&apikey=e19affc1"
@@ -177,11 +169,11 @@ Movie.create(title: @output11["Title"], year: @output11["Year"], plot: @output11
 
  
 
-Celebrity.create(name:@output["Actors"].split(",")[0] )
-Celebrity.create(name:@output["Actors"].split(",")[1] )
-Celebrity.create(name:@output7["Actors"].split(",")[0])
-Celebrity.create(name:@output2["Actors"].split(",")[1])
-Celebrity.create(name:@output2["Actors"].split(",")[2])
+celebrity.create(name:@output["Actors"].split(",")[0] )
+celebrity.create(name:@output["Actors"].split(",")[1] )
+celebrity.create(name:@output7["Actors"].split(",")[0])
+celebrity.create(name:@output2["Actors"].split(",")[1])
+celebrity.create(name:@output2["Actors"].split(",")[2])
 #-------------------------------------------User--------------------------------------------------------------------------------------------------------------------------------------
 
 User.create(name:"jacky", password:1234)
@@ -194,16 +186,4 @@ User.create(name:"mike", password:1000)
 Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment:"I hated this movie because it hit me so hard. Lost my dad a while back and never dealt with all the things from that but this movie kinda drop kicked my feelings into the focus. Hard to watch a film with tears streaming down your face")
 Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment: "The premise is very good and interesting, and the story captures you right away, the acting is solid and the movie overall is definitely worth the time.")
 Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment: "This was a step down from Trolls. The musical beats are less catchy, the story is more generic and the film was inconsistent at parts. However, this was still a relatively enjoyable family film with a great, unexpected and timely commentary about diversity and acceptance.")
-Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment: "Every now and again I go to the cinema and watch a film that grabs my attention straight away and keeps it right to the end. This is one of those films. What entertainment! Better than anything else I have seen for a considerable time.")
-
-
-
-
- 
-
-
-
-
-
-
-
+Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment: Every now and again I go to the cinema and watch a film that grabs my attention straight away and keeps it right to the end. This is one of those films. What entertainment! Better than anything else I have seen for a considerable time.")
