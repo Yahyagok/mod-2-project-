@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
 require 'json'
 #-------------------------------------------Movie1 ---------------------------------------------------------------------------------------------------------------------
 @url = "http://www.omdbapi.com/?t=Top+Gun+&apikey=e19affc1"
@@ -208,5 +207,3 @@ Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment:
 
 
 
-=======
->>>>>>> 0acbd6171f867adddd1c2cb7b28478d77fd2ecb6
