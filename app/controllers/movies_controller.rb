@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
     end 
 
     def show 
-    
+        
     end 
 
 

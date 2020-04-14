@@ -1,7 +1,12 @@
+
+<% @movie.users do |user| %>
+<%= link_to add to list, user_path(user) %>
+<% end %>
+
 <img class="index-img" src="<%= @movie.poster %>" alt="movie">
-<h3><%= @movie.title%></h3><br>
-<h5><%= @movie.year%></h5><br>
-<h5><%= @movie.plot%></h5><br>
-<h5><%= @movie.director%></h5><br>
-<h5><%= @movie.award %></h5><br>
-<h5><%= @movie.genre%></h5><br>
+<h1><%= @movie.title%></h1><br>
+<h5>RELEASED YEAR:   <%= @movie.year%></h5><br>
+<h5>STORY :  <%= @movie.plot%></h5><br>
+<h5>DIRECTOR:  <%= @movie.director%></h5><br>
+<h5>AWARDS:  <%= @movie.award %></h5><br>
+<h5>GENRE:    <%= @movie.genre%></h5><br>
