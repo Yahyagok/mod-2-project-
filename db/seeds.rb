@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Movie.destroy_all
+User.destroy_all
+Review.destroy_all
+Cast.destroy_all
+Celebrity.destroy_all
+Rating.destroy_all
+
+
 require 'json'
 #-------------------------------------------Movie1 ---------------------------------------------------------------------------------------------------------------------
 @url = "http://www.omdbapi.com/?t=Top+Gun+&apikey=e19affc1"
@@ -19,7 +27,7 @@ require 'json'
 
 
 
-Movie.create(title: @output["Title"], year: @output["Year"], plot: @output["Plot"], genre: @output["Genre"],director: @output["Director"], award: @output["Awards"] )
+Movie.create(title: @output["Title"], year: @output["Year"], plot: @output["Plot"], genre: @output["Genre"],director: @output["Director"], award: @output["Awards"], poster: @output["Poster"] )
 # ---------------------------------------Movie2---------------------------------------------------------------------------------------------------------------------------
 
 @url1 = "http://www.omdbapi.com/?i=tt3896198&apikey=e19affc1"
@@ -30,7 +38,7 @@ Movie.create(title: @output["Title"], year: @output["Year"], plot: @output["Plot
 
 
 
-Movie.create(title: @output1["Title"], year: @output1["Year"], plot: @output1["Plot"], genre: @output1["Genre"],director: @output1["Director"], award: @output1["Awards"] )
+Movie.create(title: @output1["Title"], year: @output1["Year"], plot: @output1["Plot"], genre: @output1["Genre"],director: @output1["Director"], award: @output1["Awards"], poster: @output1["Poster"]   )
 
 
 #------------------------------------Movie3---------------------------------------------------------------------------------
@@ -45,20 +53,20 @@ Movie.create(title: @output1["Title"], year: @output1["Year"], plot: @output1["P
 
 
 
-Movie.create(title: @output2["Title"], year: @output2["Year"], plot: @output2["Plot"], genre: @output2["Genre"],director: @output2["Director"], award: @output2["Awards"] )
+Movie.create(title: @output2["Title"], year: @output2["Year"], plot: @output2["Plot"], genre: @output2["Genre"],director: @output2["Director"], award: @output2["Awards"],poster: @output2["Poster"]  )
 
 #------------------------------------Movie4---------------------------------------------------------------------------------
 
 
 
-@url3 = "http://www.omdbapi.com/?t=The+Shawshank+Redemption+&apikey=e19affc1"
+@url3 = "http://www.omdbapi.com/?t=%09%09Spenser+Confidential+&apikey=e19affc1"
 
 @response= RestClient.get(@url3)
 @body3 = @response.body 
 @output3 = JSON.parse(@body3)
 
 
-Movie.create(title: @output3["Title"], year: @output3["Year"], plot: @output3["Plot"], genre: @output3["Genre"],director: @output3["Director"], award: @output3["Awards"] )
+Movie.create(title: @output3["Title"], year: @output3["Year"], plot: @output3["Plot"], genre: @output3["Genre"],director: @output3["Director"], award: @output3["Awards"],poster: @output3["Poster"]  )
 
 
 #------------------------------------Movie5---------------------------------------------------------------------------------
@@ -73,7 +81,7 @@ Movie.create(title: @output3["Title"], year: @output3["Year"], plot: @output3["P
 
 
 
-Movie.create(title: @output4["Title"], year: @output4["Year"], plot: @output4["Plot"], genre: @output4["Genre"],director: @output4["Director"], award: @output4["Awards"] )
+Movie.create(title: @output4["Title"], year: @output4["Year"], plot: @output4["Plot"], genre: @output4["Genre"],director: @output4["Director"], award: @output4["Awards"], poster: @output4["Poster"]  )
 
 #------------------------------------Movie6---------------------------------------------------------------------------------
 
@@ -86,7 +94,7 @@ Movie.create(title: @output4["Title"], year: @output4["Year"], plot: @output4["P
 @output5 = JSON.parse(@body5)
 
 
-Movie.create(title: @output5["Title"], year: @output5["Year"], plot: @output5["Plot"], genre: @output5["Genre"],director: @output5["Director"], award: @output5["Awards"] )
+Movie.create(title: @output5["Title"], year: @output5["Year"], plot: @output5["Plot"], genre: @output5["Genre"],director: @output5["Director"], award: @output5["Awards"], poster: @output5["Poster"] )
 
 
 #------------------------------------Movie7---------------------------------------------------------------------------------
@@ -100,7 +108,7 @@ Movie.create(title: @output5["Title"], year: @output5["Year"], plot: @output5["P
 @output6 = JSON.parse(@body6)
 
 
-Movie.create(title: @output6["Title"], year: @output6["Year"], plot: @output6["Plot"], genre: @output6["Genre"],director: @output6["Director"], award: @output6["Awards"] )
+Movie.create(title: @output6["Title"], year: @output6["Year"], plot: @output6["Plot"], genre: @output6["Genre"],director: @output6["Director"], award: @output6["Awards"],poster: @output6["Poster"]  )
 
 
 #------------------------------------Movie8---------------------------------------------------------------------------------
@@ -113,9 +121,9 @@ Movie.create(title: @output6["Title"], year: @output6["Year"], plot: @output6["P
 @body7 = @response.body 
 @output7 = JSON.parse(@body7)
 
- 
 
-Movie.create(title: @output7["Title"], year: @output7["Year"], plot: @output7["Plot"], genre: @output7["Genre"],director: @output7["Director"], award: @output7["Awards"] )
+
+Movie.create(title: @output7["Title"], year: @output7["Year"], plot: @output7["Plot"], genre: @output7["Genre"],director: @output7["Director"], award: @output7["Awards"],poster: @output7["Poster"]  )
 
 #------------------------------------Movie9---------------------------------------------------------------------------------
 
@@ -130,7 +138,7 @@ Movie.create(title: @output7["Title"], year: @output7["Year"], plot: @output7["P
 
 
 
-Movie.create(title: @output8["Title"], year: @output8["Year"], plot: @output8["Plot"], genre: @output8["Genre"],director: @output8["Director"], award: @output8["Awards"] )
+Movie.create(title: @output8["Title"], year: @output8["Year"], plot: @output8["Plot"], genre: @output8["Genre"],director: @output8["Director"], award: @output8["Awards"],poster: @output8["Poster"]  )
 
 
 #------------------------------------Movie10---------------------------------------------------------------------------------
@@ -144,7 +152,7 @@ Movie.create(title: @output8["Title"], year: @output8["Year"], plot: @output8["P
 @output9 = JSON.parse(@body9)
 
 
-Movie.create(title: @output9["Title"], year: @output9["Year"], plot: @output9["Plot"], genre: @output9["Genre"],director: @output9["Director"], award: @output9["Awards"] )
+Movie.create(title: @output9["Title"], year: @output9["Year"], plot: @output9["Plot"], genre: @output9["Genre"],director: @output9["Director"], award: @output9["Awards"], poster: @output9["Poster"] )
 
 #------------------------------------Movie11---------------------------------------------------------------------------------
 
@@ -157,7 +165,7 @@ Movie.create(title: @output9["Title"], year: @output9["Year"], plot: @output9["P
 @output10 = JSON.parse(@body10)
 
 
-Movie.create(title: @output10["Title"], year: @output10["Year"], plot: @output10["Plot"], genre: @output10["Genre"],director: @output10["Director"], award: @output10["Awards"] )
+Movie.create(title: @output10["Title"], year: @output10["Year"], plot: @output10["Plot"], genre: @output10["Genre"],director: @output10["Director"], award: @output10["Awards"],poster: @output10["Poster"]  )
 
 
 #------------------------------------Movie12---------------------------------------------------------------------------------
@@ -171,7 +179,7 @@ Movie.create(title: @output10["Title"], year: @output10["Year"], plot: @output10
 @output11 = JSON.parse(@body11)
 
 
-Movie.create(title: @output11["Title"], year: @output11["Year"], plot: @output11["Plot"], genre: @output11["Genre"],director: @output11["Director"], award: @output11["Awards"] )
+Movie.create(title: @output11["Title"], year: @output11["Year"], plot: @output11["Plot"], genre: @output11["Genre"],director: @output11["Director"], award: @output11["Awards"], poster: @output11["Poster"] )
 
 #--------------------------------------------Celebrity---------------------------------------------------------------------------------------------------------------------------
 
@@ -198,12 +206,13 @@ Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment:
 
 
 
+#-----------------------------------------------Cast---------------------------------------------------------------------------------------------------------------------------------------
 
- 
-
-
-
-
+Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
+Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
+Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
+Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
+Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
 
 
 
