@@ -6,8 +6,13 @@
 
 <img class="index-img" src="<%= @movie.poster %>" alt="movie"><br>
 
+ <h4>Comments : <% @movie.reviews.each do |review| %></h4>
+ <h4> <%= review.user.name%></h4>
+ <%= review.comment %>
+ <% end %>
+
 <% @movie.ratings.each do |rating|%>
-<h4> Rate :  <%= rating.rate%></h4><br>
+<h4> <%= rating.user.name %> rate's this movie a  <%= rating.rate%></h4><br>
 <% end %>
 
 <h1><%= @movie.title%></h1><br>
@@ -20,10 +25,8 @@
  <% @movie.celebrities.uniq.each  do |celebrity| %>
  <h5>ACTOR: <%= celebrity.name%></h5>
  <% end %> 
+    
 
- <% @movie.reviews.each do |review| %>
-<%= review.comment %>
-<% end %>
 
 
 

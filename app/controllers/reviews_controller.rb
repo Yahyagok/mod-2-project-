@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-      
+    
         review_hash = review_params
     
         review_hash[:user_id] = @current_user.id
@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
       end
       private
       def review_params
-          params.require(:review).permit(:comment, :movie_id)
+          params.require(:review).permit(:comment, :movie_id, :user_id)
       end
    
 

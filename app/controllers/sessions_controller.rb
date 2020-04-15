@@ -13,8 +13,7 @@ class SessionsController < ApplicationController
         redirect_to user 
       else 
         flash[:errors] = ["username or password is not right"]
-  
-        redirect_to new_user_path
+        redirect_to login_path
         # redirect_back fallback_location: new_user_path
       end 
     end 

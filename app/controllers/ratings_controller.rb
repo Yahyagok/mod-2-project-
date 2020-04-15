@@ -5,7 +5,7 @@ class RatingsController < ApplicationController
     end 
 
     def create 
-     
+    
         rating_hash = rating_params
     
         rating_hash[:user_id] = @current_user.id
@@ -26,6 +26,6 @@ class RatingsController < ApplicationController
     private 
 
     def rating_params 
-        params.require(:rating).permit(:rate, :movie_id )
+        params.require(:rating).permit(:rate, :movie_id, :user_id )
     end 
 end
