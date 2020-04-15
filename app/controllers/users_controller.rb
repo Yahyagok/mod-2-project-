@@ -2,6 +2,14 @@ class UsersController < ApplicationController
 
 def show 
    @user = User.find(params[:id])
+
+   if @user == @current_user
+    # render :show
+  else
+    flash[:error] = "You can only see your profile"
+    redirect_to users_path
+  end 
+
 end 
 
 def new

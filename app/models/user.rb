@@ -8,5 +8,6 @@ class User < ApplicationRecord
     validates :password, presence: true
     validates :password, confirmation: true
 
-    validates_confirmation_of :password
+    has_secure_password
+    #validates_confirmation_of :password
 end
