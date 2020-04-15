@@ -1,14 +1,16 @@
-<head> Review: </head>
 
-
-<%= form_for @review do |f| %> <br>
-
-  <%= f.label :movie %> 
-  <%= f.collection_select :movie_id, Movie.all, :id, :title %> <br>
-
-  <%= f.label :comment %> 
-  <%= f.text_area :comment, cols: "30", rows: "10" %>
-
+<%= form_for @review do |f| %>
+<%= f.hidden_field :user_id, value: @current_user.id %>
+<%= f.label :movie, "Movie:" %>
+<%= f.collection_select :movie_id, Movie.all, :id, :title %>
+<br>
+  <%= f.label :comment, "Review:" %>
+  <%= f.text_area :comment, size: "50x5" %>
   <%= f.submit %>
-  
 <% end %>
+
+
+
+
+
+

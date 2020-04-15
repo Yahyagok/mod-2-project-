@@ -1,19 +1,31 @@
 class ReviewsController < ApplicationController
 
-def new 
-  @review = Review.new 
-end 
+    def index
+        @reviews = Review.all 
 
-def create 
- review = Review.create(review_params)
- redirect_to review_path 
-end 
+    end 
 
-private 
+    def new 
+        @review = Review.new 
+    end 
 
-def review_params
-  params.require(:review).permit(:user_id, :movie_id, :comment)
-end 
+    def create
+    
+        review_hash = review_params
+    
+        review_hash[:user_id] = @current_user.id
+    
+        review = Review.create(review_params)
+        redirect_to movie_path(review.movie)
+
+        # @review = Review.create(review_params)
+        # redirect_to movie_path(@review.movie)
+      end
+      private
+      def review_params
+          params.require(:review).permit(:comment, :movie_id, :user_id)
+      end
+   
 
 
 end

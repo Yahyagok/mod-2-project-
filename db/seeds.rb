@@ -27,6 +27,7 @@ require 'json'
 
 
 
+
 Movie.create(title: @output["Title"], year: @output["Year"], plot: @output["Plot"], genre: @output["Genre"],director: @output["Director"], award: @output["Awards"], poster: @output["Poster"] )
 # ---------------------------------------Movie2---------------------------------------------------------------------------------------------------------------------------
 
@@ -181,6 +182,8 @@ Movie.create(title: @output10["Title"], year: @output10["Year"], plot: @output10
 
 Movie.create(title: @output11["Title"], year: @output11["Year"], plot: @output11["Plot"], genre: @output11["Genre"],director: @output11["Director"], award: @output11["Awards"], poster: @output11["Poster"] )
 
+
+
 #--------------------------------------------Celebrity---------------------------------------------------------------------------------------------------------------------------
 
  
@@ -192,27 +195,16 @@ Celebrity.create(name:@output2["Actors"].split(",")[1])
 Celebrity.create(name:@output2["Actors"].split(",")[2])
 #-------------------------------------------User--------------------------------------------------------------------------------------------------------------------------------------
 
-User.create(name:"jacky", password:1234)
-User.create(name:"yahya", password:1212)
-User.create(name:"jake", password:1111)
-User.create(name:"mike", password:1000)
+
 
 #-----------------------------------------Review---------------------------------------------------------------------------------------------------------------------------------------
 
-Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment:"I hated this movie because it hit me so hard. Lost my dad a while back and never dealt with all the things from that but this movie kinda drop kicked my feelings into the focus. Hard to watch a film with tears streaming down your face")
-Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment: "The premise is very good and interesting, and the story captures you right away, the acting is solid and the movie overall is definitely worth the time.")
-Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment: "This was a step down from Trolls. The musical beats are less catchy, the story is more generic and the film was inconsistent at parts. However, this was still a relatively enjoyable family film with a great, unexpected and timely commentary about diversity and acceptance.")
-Review.create(user_id:User.all.sample.id, movie_id:Movie.all.sample.id, comment: "Every now and again I go to the cinema and watch a film that grabs my attention straight away and keeps it right to the end. This is one of those films. What entertainment! Better than anything else I have seen for a considerable time.")
+
 
 
 
 #-----------------------------------------------Cast---------------------------------------------------------------------------------------------------------------------------------------
 
-Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
-Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
-Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
-Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
-Cast.create(movie_id: Movie.all.sample.id, celebrity_id: Celebrity.all.sample.id  )
 
 
 
