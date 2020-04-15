@@ -1,7 +1,8 @@
+
+
 <% @movies.each do |movie|  %>
-<%= movie.title %><br>
-<img class="index-img" src="<%= movie.poster %>" alt="movie">
 <%= link_to movie.title, movie_path(movie) %><br>
+<img class="index-img" src="<%= movie.poster %>" alt="movie">
 <br>
 <% end %>
 

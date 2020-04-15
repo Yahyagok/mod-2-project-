@@ -1,12 +1,31 @@
 
-<% @movie.users do |user| %>
-<%= link_to add to list, user_path(user) %>
+<%# @movie.users do |user| %>
+<%# button_to "add to list", user_path(user) %>
+<%# end %>
+
+
+<img class="index-img" src="<%= @movie.poster %>" alt="movie"><br>
+
+<% @movie.ratings.each do |rating|%>
+<h4> Rate :  <%= rating.rate%></h4><br>
 <% end %>
 
-<img class="index-img" src="<%= @movie.poster %>" alt="movie">
 <h1><%= @movie.title%></h1><br>
+
 <h5>RELEASED YEAR:   <%= @movie.year%></h5><br>
 <h5>STORY :  <%= @movie.plot%></h5><br>
 <h5>DIRECTOR:  <%= @movie.director%></h5><br>
 <h5>AWARDS:  <%= @movie.award %></h5><br>
 <h5>GENRE:    <%= @movie.genre%></h5><br>
+ <% @movie.celebrities.uniq.each  do |celebrity| %>
+ <h5>ACTOR: <%= celebrity.name%></h5>
+ <% end %> 
+
+ <% @movie.reviews.each do |review| %>
+<%= review.comment %>
+<% end %>
+
+
+
+
+  

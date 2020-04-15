@@ -10,6 +10,18 @@
   </head>
 
   <body>
+  <ul>
+    <li><%= link_to "Movies", movies_path%> </li>
+  <li><%= link_to "New Comment", new_review_path %></li>
+  <li><%=link_to "give a rating", new_rating_path %></li>
+  </ul>
+    <% if @current_user %>
+    <li class='right'><%= @current_user.name %></li>
+         <li class='right'><%= link_to "Log Out", sessions_path, method: :delete %></li>
+  <%  else %>
+        <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+          <li class='right'><%= link_to 'Sign-in', login_path %></li>
+          <% end %>
     <%= yield %>
   </body>
 </html>
