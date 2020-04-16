@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-
+    before_action :find_rating , only: [ :edit, :update]
     def new 
         @rating = Rating.new 
     end 
@@ -28,10 +28,11 @@ class RatingsController < ApplicationController
     end 
 
     def edit 
-        @rating = Rating.find([:id])
+        @rating = Rating.find(params[:id])
     end 
 
     def update
+
         rating_hash = rating_params
     
         rating_hash[:user_id] = @current_user.id
@@ -45,5 +46,9 @@ class RatingsController < ApplicationController
 
     def rating_params 
         params.require(:rating).permit(:rate, :movie_id, :user_id )
+    end 
+
+    def find_rating 
+        @rating = Rating.find(params[:id])
     end 
 end
