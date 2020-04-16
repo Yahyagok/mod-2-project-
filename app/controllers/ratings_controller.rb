@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-    before_action :find_rating , only: [ :edit, :update]
+    before_action :find_rating , only: [ :edit, :update, :destroy]
     def new 
         @rating = Rating.new 
     end 
@@ -28,7 +28,7 @@ class RatingsController < ApplicationController
     end 
 
     def edit 
-        @rating = Rating.find(params[:id])
+       
     end 
 
     def update
@@ -37,10 +37,17 @@ class RatingsController < ApplicationController
     
         rating_hash[:user_id] = @current_user.id
     
-        rating = Rating.update(rating_params)
-        redirect_to movie_path(rating.movie)
+        @rating.update(rating_params)
+        redirect_to movie_path
 
    end 
+
+   def destroy 
+    movie= @rating.movie 
+     @rating.destroy 
+     redirect_to movie_path(movie)
+ end 
+
 
     private 
 
