@@ -1,8 +1,4 @@
 class SessionsController < ApplicationController
-<<<<<<< HEAD
-=======
-
->>>>>>> 6acbb4126a2ab2e64b8c4dbc9baaf6400681627c
     skip_before_action :authorized, only: [:new, :create]
 
     def new
