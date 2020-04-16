@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_204114) do
+ActiveRecord::Schema.define(version: 2020_04_15_172325) do
 
   create_table "casts", force: :cascade do |t|
     t.integer "movie_id"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 2020_04_13_204114) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "movie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "year"
@@ -34,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_204114) do
     t.string "award"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "poster"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -54,9 +62,9 @@ ActiveRecord::Schema.define(version: 2020_04_13_204114) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end

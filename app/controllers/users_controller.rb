@@ -1,9 +1,15 @@
+
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create]
+  def index 
+    @users = User.all
+  end 
 
-def show 
-   @user = User.find(params[:id])
 
-   if @user == @current_user
+def show
+  @user = User.find(params[:id])
+
+  if @user == @current_user
     # render :show
   else
     flash[:error] = "You can only see your profile"
@@ -19,6 +25,7 @@ end
 def create 
     @user = User.create(user_params)
     if @user.valid?
+      session[:user_id] = @user.id
       redirect_to @user
     else 
       flash[:errors] = @user.errors.full_messages
@@ -39,6 +46,8 @@ def update
     redirect_to  edit_user_path(@user)
   end 
 end
+
+
 
 
 private 

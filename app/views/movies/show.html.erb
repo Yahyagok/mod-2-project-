@@ -1,0 +1,52 @@
+
+<%# @movie.users do |user| %>
+<%# button_to "add to list", user_path(user) %>
+<%# end %>
+
+
+<img class="index-img" src="<%= @movie.poster %>" alt="movie"><br>
+  <% if  @current_user %> 
+      <% @movie.reviews.each do |review|%>
+       <%= button_to "edit comment", edit_review_path(review), method: :get %>
+      <% end %>
+<% end %>
+
+<%= button_to "Delete Comment", movie_path, method: :delete %>
+
+
+<%= button_to "Edit rating", new_rating_path, method: :get %>
+ <h4>Comments : <% @movie.reviews.each do |review| %></h4>
+ <h4> <%= review.user.name%></h4>
+ <%= review.comment %>
+ <% end %>
+
+<% @movie.ratings.uniq.each do |rating|%>
+<h4> <%= rating.user.name %> rate's this movie a  <%= rating.rate%></h4><br>
+<% end %>
+
+<h1><%= @movie.title%></h1><br>
+
+<h5>RELEASED YEAR:   <%= @movie.year%></h5><br>
+<h5>STORY :  <%= @movie.plot%></h5><br>
+<h5>DIRECTOR:  <%= @movie.director%></h5><br>
+<h5>AWARDS:  <%= @movie.award %></h5><br>
+<h5>GENRE:    <%= @movie.genre%></h5><br>
+ <% @movie.celebrities.uniq.each  do |celebrity| %>
+ <h5>ACTOR: <%= celebrity.name%></h5>
+ <% end %> 
+ <% @movie.favorites.uniq.each do |favorite|%>
+ <% end %>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+  

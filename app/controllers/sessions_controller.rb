@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6acbb4126a2ab2e64b8c4dbc9baaf6400681627c
     skip_before_action :authorized, only: [:new, :create]
 
     def new
@@ -12,16 +16,18 @@ class SessionsController < ApplicationController
         redirect_to user 
       else 
         flash[:errors] = ["username or password is not right"]
-  
-        redirect_to new_user_path
+        redirect_to login_path
         # redirect_back fallback_location: new_user_path
       end 
     end 
-  
+
     def destroy 
-      # session[:user_id] = nil
-      session.delete(:user_id)
-      redirect_to fantasy_creatures_path
-    end 
+        # session[:user_id] = nil
+        session.delete(:user_id)
+        redirect_to login_path
+      end 
+
   
+   
+
 end

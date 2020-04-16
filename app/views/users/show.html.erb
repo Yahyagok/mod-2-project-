@@ -1,2 +1,20 @@
 <h1>Welcome To Your Profile </h1>
 
+
+
+
+<% @user.favorites.uniq.each do |favorite| %>
+<img class="index-img" src="<%= favorite.movie.poster %>" alt="movie"><br>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
