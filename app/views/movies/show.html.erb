@@ -5,13 +5,13 @@
 
 
 <img class="index-img" src="<%= @movie.poster %>" alt="movie"><br>
-
+<%= button_to "Edit rating", new_rating_path, method: :patch %>
  <h4>Comments : <% @movie.reviews.each do |review| %></h4>
  <h4> <%= review.user.name%></h4>
  <%= review.comment %>
  <% end %>
 
-<% @movie.ratings.each do |rating|%>
+<% @movie.ratings.uniq.each do |rating|%>
 <h4> <%= rating.user.name %> rate's this movie a  <%= rating.rate%></h4><br>
 <% end %>
 
@@ -25,6 +25,13 @@
  <% @movie.celebrities.uniq.each  do |celebrity| %>
  <h5>ACTOR: <%= celebrity.name%></h5>
  <% end %> 
+ <% @movie.favorites.uniq.each do |favorite|%>
+ <% end %>
+
+
+
+
+
     
 
 

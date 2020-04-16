@@ -1,4 +1,6 @@
 class Favorite < ApplicationRecord
-    belongs_to :user_id
-    belongs_to :movie_id 
+    belongs_to :user
+    belongs_to :movie
+
+    validates :movie,  uniqueness: true
 end

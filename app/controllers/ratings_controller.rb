@@ -4,6 +4,10 @@ class RatingsController < ApplicationController
         @rating = Rating.new 
     end 
 
+
+
+ 
+
     def create 
     
         rating_hash = rating_params
@@ -22,6 +26,20 @@ class RatingsController < ApplicationController
         #     redirect_to new_rating_path
         # end 
     end 
+
+    def edit 
+        @rating = Rating.find([:id])
+    end 
+
+    def update
+        rating_hash = rating_params
+    
+        rating_hash[:user_id] = @current_user.id
+    
+        rating = Rating.update(rating_params)
+        redirect_to movie_path(rating.movie)
+
+   end 
 
     private 
 
