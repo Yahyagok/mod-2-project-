@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+    before_action :find_review, only: [ :edit, :update, :destroy ]
     def index
         @reviews = Review.all 
 
@@ -21,10 +21,38 @@ class ReviewsController < ApplicationController
         # @review = Review.create(review_params)
         # redirect_to movie_path(@review.movie)
       end
+
+
+      def edit 
+    
+      end 
+
+
+      def update 
+
+        review_hash = review_params
+    
+        review_hash[:user_id] = @current_user.id
+    
+        review = Review.update(review_params)
+        redirect_to movies_path
+      end 
+
+     def destroy 
+         @review.destroy 
+         redirect_to movie_path
+     end 
+
       private
       def review_params
           params.require(:review).permit(:comment, :movie_id, :user_id)
       end
+
+      def find_review 
+        @review = Review.find(params[:id])
+      end 
+
+      
    
 
 

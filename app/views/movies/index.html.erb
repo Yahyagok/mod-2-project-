@@ -3,7 +3,7 @@
 <% @movies.each do |movie|  %>
 <%= link_to movie.title, movie_path(movie) %><br>
 <img class="index-img" src="<%= movie.poster %>" alt="movie">
-<%= button_to "add to list", user_path(), method: :get %>
+
 <br>
 <% end %>
 
