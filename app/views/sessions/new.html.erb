@@ -1,12 +1,9 @@
 <h1>Login</h1>
 
-<ol>
-  <% if flash[:errors] %>
-    <% flash[:errors].each do |error|%>
-      <li><%= error %></li>
-    <% end %>
-  <% end %>
-</ol>
+
+<%= flash[:error] %>
+
+
 
 <%= form_for :session, url: sessions_path  do |f| %>
   <%= f.label :name %>
@@ -15,5 +12,8 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.submit %>
+  <%= f.submit "Sign In"%>
 <% end %>
+
+<br>
+Not a Member?   <%= link_to "Sign Up", new_user_path %> 
