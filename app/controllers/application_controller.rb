@@ -10,7 +10,9 @@ class ApplicationController < ActionController::Base
         if @current_user
           # execute normally
         else 
-          flash[:errors] = ["must be logged in to see that page"]
+          flash[:error] = "You've got to ask yourself one question: 'Do I feel lucky?' Well, do ya punk? - Dirty Harry, 1971" 
+          
+          
           redirect_to login_path
         end 
       end 
