@@ -19,13 +19,15 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-        <a class="navbar-brand" href="/"></i>Rotten Apples</a>
+        <a class="navbar-brand" href="/"></i>Rotten Potatoes</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           
         <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mr-auto">
+        
+        
              
              <li class="nav-item active">
                 <a class="nav-link" href= "<%= movies_path %>">  Movies</a></a>
@@ -34,6 +36,7 @@
                <a class="nav-link"href= "<%= new_review_path %>">  Write a Review</a></a>
              </li>
              </ul>
+
              <div class="mx-auto order-0">
              </div>
              <ul class="navbar-nav ml-auto">
@@ -41,7 +44,7 @@
                <a class="nav-link" href= "<%= new_rating_path %>">  Give a Rating</a>
              </li>
              <li class="nav-item active">
-               <a class="nav-link" href="<%= @current_user %>">  Profile Page</a>
+               <a class="nav-link" href= "<% @current_user %>" >  Profile Page</a>
              </li>
              <ul class="navbar-nav ml-auto">
              <li class="nav-item active">

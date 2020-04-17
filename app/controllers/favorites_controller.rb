@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
         if favorite.valid? 
              redirect_to user_path(favorite.user )
         else
-             flash[:errors] = "This Movie is already in your profile"
+             flash[:errors] = "This Movie Is Already In Your Profile"
              redirect_to new_favorite_path
         end 
 

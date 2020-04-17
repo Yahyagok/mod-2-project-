@@ -10,7 +10,7 @@
 <%= form_for @favorite do |f|%>
 <%= f.hidden_field :user_id, value: @current_user.id%><br>
 <%= f.collection_select :movie_id, Movie.all, :id, :title %><br>
-<%= f.submit %>
+<%= f.submit "Add To Favorite" %>
 <% end %>
 
 
