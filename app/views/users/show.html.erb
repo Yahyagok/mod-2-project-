@@ -4,6 +4,7 @@
 
 
 <% @user.favorites.uniq.each do |favorite| %>
+<%= link_to favorite.movie.title, movie_path(favorite.movie)%><br>
 <img class="index-img" src="<%= favorite.movie.poster %>" alt="movie"><br>
 
 <% end %>

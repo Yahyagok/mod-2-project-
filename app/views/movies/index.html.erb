@@ -1,11 +1,16 @@
 
 
-<% @movies.each do |movie|  %>
-<%= link_to movie.title, movie_path(movie) %><br>
-<img class="index-img" src="<%= movie.poster %>" alt="movie">
-
-<br>
-<% end %>
-
+<p class="border-top mt-3 py-2"><br>
+<div class="card-columns">
+<%@movies.each do |movie|%>
+    <div class="card">
+<div class="card-body p-1">
+    <%= link_to movie.title, movie_path(movie) %>
+    <img class="index-img" src="<%= movie.poster%>" alt="movie">
+    <%end%>
+    </div>
+    </div>
+ 
+  </div>
 
 

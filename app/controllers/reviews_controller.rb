@@ -33,14 +33,15 @@ class ReviewsController < ApplicationController
         review_hash = review_params
     
         review_hash[:user_id] = @current_user.id
-    
-        review = Review.update(review_params)
+       
+        @review.update(review_params)
         redirect_to movies_path
       end 
 
      def destroy 
+        movie= @review.movie 
          @review.destroy 
-         redirect_to movie_path
+         redirect_to movie_path(movie)
      end 
 
       private
