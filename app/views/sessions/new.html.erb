@@ -8,6 +8,29 @@
   <% end %>
 </ol>
 
+
+
+<%# <head>
+<meta charset= "utf-8"> 
+<title> Login Form </title>
+<link rel="stylesheet" href = "style.css"> %>
+<%# <body>
+<div class= "login-box">
+<h1> Login </h1>
+<div class= "textbox">
+<input type="text" placeholder="Name" name="" value="">
+</div>
+
+<div class= "textbox">
+<input type="text" placeholder="Password" name="" value="">
+</div>
+
+<input class="btn" type="button" name="" value="Sign In">
+</div> %>
+ 
+
+
+
 <%= form_for :session, url: sessions_path  do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -15,5 +38,6 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.submit %>
+  <%= f.submit "Sign In"%>
 <% end %>
+
