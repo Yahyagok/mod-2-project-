@@ -1,4 +1,4 @@
-Name of the project is Rotten and Patatoes. 
+Project name is Rotten and Patatoes. 
 This project is built with Ruby on Rails,and for CSS used Bootstrap.
 That was a pair project with Jacky Lin.
 User could be able to see bunch of movies and give a comment. Each movie has its own page.
